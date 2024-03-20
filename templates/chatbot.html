@@ -77,17 +77,17 @@
     {% endif %}
     <div class="card-body messages-box">
       <ul class="list-unstyled messages-list">
-        <!-- <li class="message received">
+        <li class="message received">
           <div class="message-text">
             <div class="message-sender">
-              <b>AI Chatbot</b>
+              <b>Luna</b>
             </div>
             <div class="message-content">
-              Hi {{user.username}}, I am your AI Chatbot, you can ask me anything.
+              Hello! {{user.username}} I am Luna, your AI Virtual Assistant, you
+              can ask me anything.
             </div>
           </div>
-        </li> -->
-
+        </li>
         {% for chat in chats %} {% if chat.user == request.user %}
 
         <li class="message sent">
