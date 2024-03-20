@@ -72,6 +72,7 @@ cover/
 *.mo
 
 # Django stuff:
+django-admin-keys.*
 
 # Flask stuff:
 instance/
