@@ -5,6 +5,8 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.utils import timezone
+from .models import Chat
 
 env = environ.Env()
 environ.Env.read_env()
@@ -89,11 +91,14 @@ def ask_genai(message):
 # print(convo.last.text)
 
 def chatbot(request):
+    chats = Chat.objects.filter(user=request.user)
     if request.method == 'POST':
         message = request.POST.get('message')
         response_text = ask_genai(message)
+        chat = Chat(user=request.user, message=message, response=response_text, created_at=timezone.now())
+        chat.save()
         return JsonResponse({'message': message, 'response': response_text})
-    return render(request, 'chatbot.html')
+    return render(request, 'chatbot.html', {'chats': chats})
 
 def login(request):
     if request.method == 'POST':

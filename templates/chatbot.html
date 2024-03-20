@@ -83,8 +83,8 @@
               <b>Luna</b>
             </div>
             <div class="message-content">
-              Hello! {{user.username}} I am Luna, your AI Virtual Assistant, you
-              can ask me anything.
+              Hello, {{user.username}}! I am Luna, your AI Virtual Assistant.
+              You can ask me anything.
             </div>
           </div>
         </li>
@@ -93,7 +93,7 @@
         <li class="message sent">
           <div class="message-text">
             <div class="message-sender">
-              <b>You</b>
+              <b>{{user.username}}</b>
             </div>
             <div class="message-content">{{chat.message}}</div>
           </div>
@@ -102,7 +102,7 @@
         <li class="message received">
           <div class="message-text">
             <div class="message-sender">
-              <b>AI Chatbot</b>
+              <b>Luna</b>
             </div>
             <div class="message-content">{{chat.response}}</div>
           </div>
@@ -148,7 +148,7 @@
     messageItem.innerHTML = `
         <div class="message-text">
             <div class="message-sender">
-                <b>You</b>
+                <b>{{user.username}}</b>
             </div>
             <div class="message-content">
                 ${message}
@@ -176,7 +176,7 @@
         messageItem.innerHTML = `
         <div class="message-text">
             <div class="message-sender">
-              <b>AI Chatbot</b>
+              <b>Luna</b>
             </div>
             <div class="message-content">
                 ${response}
