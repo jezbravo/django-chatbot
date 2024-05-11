@@ -40,7 +40,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://django-chatbot-production.up.railway.app/'
+    'http://*',
+    'https://django-chatbot-production.up.railway.app'
 ]
 
 # Application definition
