@@ -88,8 +88,6 @@ def ask_genai(message):
     
     return response_text
 
-# print(convo.last.text)
-
 def chatbot(request):
     chats = Chat.objects.filter(user=request.user)
     if request.method == 'POST':
